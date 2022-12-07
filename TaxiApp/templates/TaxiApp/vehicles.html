@@ -1,0 +1,22 @@
+{% extends 'TaxiApp/base.html' %}
+
+{% block title %}
+Автомобили
+{% endblock %}
+
+{% block entity_name %}
+Автомобили
+{% endblock %}
+
+{% block cycle %}
+    {% for el in vehicles_items %}
+	<div>
+        <h2>Гос. номер: {{ el.gosNumber }}</h2>
+        <p>Запись № {{ el.id }}</p>
+		<p>Марка: {{ el.mark }}</p>
+		<p>Год выпуска: {{ el.issueYear}}</p>
+        <p>Класс: {{ el.level}}</p>
+        <hr>
+	</div>
+	{% endfor %}
+{% endblock %}

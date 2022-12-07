@@ -1,0 +1,24 @@
+{% extends 'TaxiApp/base.html' %}
+
+{% block title %}
+Водители
+{% endblock %}
+
+{% block entity_name %}
+Водители
+{% endblock %}
+
+{% block cycle %}
+    {% for el in driver_items %}
+	<div>
+		<h2>Фамилия: {{ el.surname }}</h2>
+		<p>Имя: {{ el.name }}</p>
+		<p>Отчество: {{ el.lastName}}</p>
+        <p>Дата рождения: {{ el.birthDate}}</p>
+        <p>ИНН: {{ el.inn}}</p>
+        <p>Серия и номер паспорта: {{ el.serno}}</p>
+        <p>Автомобиль: {{ el.vehicle}}</p>
+        <hr>
+	</div>
+	{% endfor %}
+{% endblock %}

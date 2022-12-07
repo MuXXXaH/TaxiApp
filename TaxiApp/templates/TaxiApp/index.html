@@ -1,23 +1,13 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-<meta http-equiv="Content-Type" content="text/html" 
-charset="UTF-8">
-{% load bootstrap5 %}
-{% bootstrap_javascript %}
-{% bootstrap_css %}
-<title>Главная - Поиск такси</title>
-</head>
-<body>
-<h1>Автомобили</h1>
-{% for vehicle in vehicles %}
-<div>
-<h2>{{ vehicle.mark }}</h2>
-<p>{{ vehicle.level }}</p>
-<p>{{ vehicle.gosNumber }}</p>
-<p>{{ vehicle.color }}</p>
-<p>{{ vehicle.issueYear.year }}</p>
-</div>
-{% endfor %}
-</body>
-</html>
+{% extends 'TaxiApp/base.html' %}
+
+{% block title %}
+Главная страница
+{% endblock %}
+
+{% block entity_name %}
+Здравствуйте
+{% endblock %}
+
+{% block cycle %}
+    <h2>Добро пожаловать в приложение заказа такси!</h2>
+{% endblock %}
