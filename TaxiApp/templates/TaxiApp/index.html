@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/html" 
+charset="UTF-8">
+<title>Главная - Поиск такси</title>
+</head>
+<body>
+<h1>Автомобили</h1>
+{% for vehicle in vehicles %}
+<div>
+<h2>{{ vehicle.mark }}</h2>
+<p>{{ vehicle.level }}</p>
+<p>{{ vehicle.gosNumber }}</p>
+<p>{{ vehicle.color }}</p>
+<p>{{ vehicle.issueYear.year }}</p>
+</div>
+{% endfor %}
+</body>
+</html>
