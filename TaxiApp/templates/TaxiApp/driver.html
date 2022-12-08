@@ -22,7 +22,7 @@
         {%if el.order_set.all|length > 0%}
             <ul>
                 {%for order in el.order_set.all%}
-                    <li>{{ order.dateTime }}</li>
+                    <li>{{ order.dateTime|date:"d.m.Y" }}</li>
                 {%endfor%}
             </ul>
         <!-- {elif True} -->

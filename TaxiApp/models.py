@@ -37,7 +37,7 @@ class Order(models.Model):
     class Meta:
         verbose_name_plural = 'Заказы'
         verbose_name = 'Заказ'
-        ordering = ['id']
+        ordering = ['dateTime']
 
 class Driver(models.Model):
     surname = models.CharField(max_length=50, verbose_name="Фамилия")
