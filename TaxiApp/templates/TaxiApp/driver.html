@@ -18,6 +18,17 @@
         <p>ИНН: {{ el.inn}}</p>
         <p>Серия и номер паспорта: {{ el.serno}}</p>
         <p>Автомобиль: {{ el.vehicle}}</p>
+        <h3>Даты заказов:</h3>
+        {%if el.order_set.all|length > 0%}
+            <ul>
+                {%for order in el.order_set.all%}
+                    <li>{{ order.dateTime }}</li>
+                {%endfor%}
+            </ul>
+        <!-- {elif True} -->
+        {%else%}
+            <p>Нет заказов</p> 
+        {%endif%}
         <hr>
 	</div>
 	{% endfor %}

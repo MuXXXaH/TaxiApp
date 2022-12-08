@@ -6,7 +6,7 @@ def index(request):
 
 
 def vehicles_page(request):
-    vehicles_items = Vehicles.objects.order_by('mark')
+    vehicles_items = Vehicles.objects.order_by('gosNumber')
     return render(request, 'TaxiApp/vehicles.html', {'vehicles_items': vehicles_items})
 
 

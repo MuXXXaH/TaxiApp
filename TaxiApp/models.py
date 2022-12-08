@@ -13,7 +13,7 @@ class Vehicles(models.Model):
     class Meta:
         verbose_name_plural = 'Автомобили'
         verbose_name = 'Автомобиль'
-        ordering = ['-mark'] 
+        ordering = ['gosNumber'] 
 
 class Level(models.Model):
     name = models.CharField(max_length=6, db_index=True, verbose_name="Класс")
@@ -47,6 +47,7 @@ class Driver(models.Model):
     inn = models.IntegerField(verbose_name="ИНН")
     serno = models.CharField(max_length=15, verbose_name="Серно паспорта")
     vehicle = models.ForeignKey('Vehicles', null=True, on_delete=models.PROTECT, verbose_name='Автомобиль')
+    # order = models.ForeignKey(Order, null=True, on_delete=models.PROTECT, verbose_name='Заказ')    
     
     def __str__(self):
         return self.surname
